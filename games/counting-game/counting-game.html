@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+	<html lang="en">
+	  <head>
+		
+	  </head>
+	  <body>
+			<h1 id="counter">
+				0 
+			</h1>
+			<div id="game-container">
+				<input type="text">
+				<input type="text">
+				<input type="text">
+			</div>
+		<button onclick="(function(){ document.getElementById ('counter').innerHTML=sum(document.getElementsByTagName('input')[0].value,document.getElementsByTagName('input')[1].value,document.getElementsByTagName('input')[2].value) })()">Continue</button>
+			<script src="js/counting-game.js"></script>
+			<script>
+				console.log("Logging from html" + sum(1, 2, 3));
+				try {					
+					countingGame.startGame("game-container");
+				} catch (error) {
+					console.log("there was an error: " + error);
+				}
+				console.log("Äfter error");
+			</script>
+    </body>
+	</html>
