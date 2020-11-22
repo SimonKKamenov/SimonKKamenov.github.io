@@ -20,6 +20,9 @@ var countingGame = {};
    function increaseCount(){
      counter += 1;
      heading.innerHTML = counter;
+     if (counter == 10) {
+       alert("You count to 10, congratulations");
+     }
    }
    
    $(window).resize(sizeField);
@@ -33,6 +36,8 @@ var countingGame = {};
     container.appendChild(gameField);
     gameField.className = "game-field";
     sizeField();
+
+    
     
     var countables = [];
     var gameFieldHeight = $(gameField).height();
@@ -44,16 +49,17 @@ var countingGame = {};
       gameField.appendChild(countable);
       countable.style.height = countableSize + "px";
       countable.style.width = countableSize + "px";
-      countable.style.border = "1px solid blue";
+      countable.style.border = "1px solid yellow";
       countable.style.top = i * countableSize * 2 + "px";
       countable.style.left = i * countableSize * 2 + "px";
       countable.style.position = "absolute";
-      $(countable).click(function(){
-      $(this).css("background", "green");
-      increaseCount();
+      countable.style.borderRadius = "50%";
+      $(countable).one("click", function(){
+        $(this).css("background", "yellow");
+        $(this).animate({width: '60px'});
+        $(this).animate({height: '60px'});
+        increaseCount(); 
       });
-    
-   
     }
     
   };
