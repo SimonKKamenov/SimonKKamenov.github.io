@@ -83,13 +83,10 @@ var countingGame = {};
     var gameFieldWidth = $(gameField).width();
     var countableSize = Math.min(gameFieldHeight, gameFieldWidth) / (2 * gameState.targetCount);
 
-    
-    
     for(var i=0; i < gameState.targetCount; i+=1){
       var countable = createCountable(i, countableSize);
       gameField.appendChild(countable);
     }
-    
   };
 
 })(jQuery);
